@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>지도</title>
+    <script type="text/javascript" src="http://apis.daum.net/maps/maps3.js?apikey=f8a070cd9b34801cfd61ce4ab0b06db037c41d89" charset="utf-8"></script>
+    <script type="text/javascript">
+        var map;
+        function init() {
+            map = new daum.maps.Map(document.getElementById('map'), {
+                center: new daum.maps.LatLng(37.3461603, 126.7024882)
+            });
+
+            var marker = new daum.maps.Marker({
+                position: new daum.maps.LatLng(37.3461603, 126.7024882)
+            });
+            marker.setMap(map);
+        }
+    </script>
+</head>
+<body onload="init()">
+<div id="map" style="width:350px;height:350px;"></div>
+</body>
+</html> 

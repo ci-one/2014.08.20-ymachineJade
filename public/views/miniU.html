@@ -1,0 +1,51 @@
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <base href="/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="images/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="images/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="images/apple-touch-icon-57-precomposed.png">
+    <link rel="shortcut icon" href="images/favicon.png">
+    <link href="bower_components/angular-animate/angular-animate.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link href="styles/mini.css" rel="stylesheet">
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="scripts/angular-file-upload.min.js"></script>
+    <script src="scripts/angular-file-upload-shim.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers/oldProCtrl.js"></script>
+</head>
+<body ng-app="mcApp" ng-controller="oldListCtrl" class="contents">
+
+<h3><a href="" onclick="parent.document.location.href='ym#/ym/product/used/list'"><img src="images/menu_icon_01.png"> Used Product</a></h3>
+
+<div class="media well" style="margin-top: 0px; margin-bottom: 15px;" ng-repeat="item in miniK">
+    <a href="" ng-click="dd(item.id)" class="pull-left"><img ng-src="images/oldPro/{{item.images}}"
+                                                           style="width: 50px"
+                                                           alt=''/></a>
+    <div class="media-body">
+        <h5 class="media-heading"><strong><a href="" ng-click="dd(item.id)">{{item.name}}</a></strong></h5>
+        2014년식
+    </div>
+</div>
+</body>
+</html>

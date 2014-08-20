@@ -1,0 +1,117 @@
+<link href="styles/customerqna_view.css" rel="stylesheet">
+<script src="scripts/controllers/lsQue.js"></script>
+
+<link href="styles/business.css" rel="stylesheet">
+<div class="row clearfix">
+    <div class="banner">
+        <img src="images/lease-img/banner.png" alt="금융리스배너" class="center-block">
+    </div>
+</div>
+
+<div class="container cont01">
+    <div class="row clearfix">
+        <div class="col-md-offset-1 col-md-10 column col-md-offset-1">
+            <h3>
+                <a href="#"><img src="images/menu_icon_01.png">금융리스문의</a>
+            </h3>
+
+            <div class="row clearfix">
+                <div class="container">
+                    <div class="col-md-12 column">
+                        <form role="form">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <div class="form-group">
+                                        <label for="usedInputTitle">제목</label>
+
+                                        <div class="row clearfix"></div>
+                                        <input type="text" value="{{item.title}}"
+                                               class="form-control" id="usedInputTitle"
+                                               autofocus="autofocus" readonly="readonly"
+                                               />
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <div class="col-md-6 column visible-md visible-lg myhalf">
+                                        <div class="form-group form-inline">
+                                            <label for="usedInputname">작성자</label>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="text" value="{{item.writer}}"
+                                                   class="form-control myhalfinput" id="" readonly="readonly"
+                                                   />
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="usedInputCompany">업체명</label>
+
+
+                                            <div class="row clearfix"></div>
+                                            <input type="text" value="{{item.comp}}"
+                                                   class="form-control myhalfinput" id="" readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 column visible-md visible-lg myhalf">
+                                        <div class="form-group">
+                                            <label for="usedInputCall">연락처</label>
+
+
+                                            <div class="row clearfix"></div>
+                                            <input type="tel"
+                                                   value="{{item.contact}}"
+                                                   class="form-control myhalfinput" id="" readonly="readonly"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="usedInputEmail">이메일</label>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="email"
+                                                   value="{{item.email}}"
+                                                   class="form-control myhalfinput" id="usedInputEmail"
+                                                   readonly="readonly"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <div class="form-group">
+                                        <label for="usedInputContent">내용</label>
+
+
+                                        <div class="row clearfix"></div>
+                                        <textarea rows="10" cols="" class="form-control" id="usedInputContent"
+                                                  placeholder="문의사항을 적어주세요" readonly="readonly">{{item.content}}
+                                                  </textarea>
+                                    </div>
+
+                                    <div class="myfilelist">
+                                        <ul class="list-unstyled" ng-repeat="image in item_image">
+                                            <li>
+                                                <div>
+                                                    <img ng-src="/images/lsQ/{{image}}" style="width: 50px">
+                                                    <a ng-href="/images/lsQ/{{image}}" download="{{image}}">
+                                                        {{image}}
+                                                    </a></div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mywidth">
+
+                                <!--<button type="submit" class="btn btn-primary pull-right">등 록</button>-->
+                                <a href="/lease/#/lease/ask/list" class="btn btn-primary pull-right">목록보기</a>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

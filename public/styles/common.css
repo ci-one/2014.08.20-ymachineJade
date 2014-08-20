@@ -1,0 +1,84 @@
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+
+ *{font-family:'Nanum Gothic', sans-serif; }
+
+body{padding-top:55px;
+    overflow: scroll;}
+
+/*header*/
+.navbar{width:100%;}
+.navbar-nav > li {
+    float: left; margin-right:0;}
+
+.nav li {
+  /*padding-left: 20px;*/
+
+  }
+.nav-menu {margin-top:30px; margin-bottom:0;}
+
+
+.head-wrapper .nav li a{color:#222222; font-size:13px; font-weight:bold; border-top:3px solid transparent;}
+.head-wrapper .nav li a:hover{text-decoration:none; border-top:3px solid #ffcb08;}
+
+.head-wrapper .nav li a.top{color:#e0e0e0; font-size:13px; font-weight:bold; border-top:3px solid transparent;}
+.head-wrapper .nav li a.top:hover{text-decoration:none; border-top:3px solid transparent;}
+
+.head-wrapper {padding-bottom:0px; border-bottom:3px solid #ffcb08; overflow:hidden;}
+
+/*footer*/
+.footer-wrapper{margin-top:0px; border-top:3px solid #ffcb08; overflow: hidden;}
+.breadcrumb {
+	background-color: #ffffff;
+	margin-top: 5px;
+	/*margin-bottom: 15px;*/
+}
+.breadcrumb>li{padding:0 5px;}
+.breadcrumb li a{color:#222; font-size:13px; font-weight:bold;}
+
+.breadcrumb>li+li:before {
+	content: none;
+}
+
+.footer-wrapper address{font-size:12px; margin-top: 15px;}
+
+
+/*sub-nav*/
+.navbar-sub{margin-top:0; background:#717171;padding-top:8px;}
+.navbar-sub li a{color:#fff; font-size:14px;}
+.navbar-sub li a:hover{text-decoration:none;}
+/*contents*/
+.cont01{margin-top:57px;}
+
+/*사이드메뉴*/
+ /*메뉴-헤더*/
+.nav-stacked{border-top:3px solid #ffca08; border-bottom:3px solid #ffca08;}
+.nav-stacked dt{padding:8px 0;}
+.title{border-bottom:1px solid #e6e6e6;}
+.title a{color: #222222; size:18px; font-weight:bold;}
+.nav-pills > dd.active > a,
+.nav-pills > dd.active > a:hover,
+.nav-pills > dd.active > a:focus {
+  color: #222222; size:16px; font-weight:bold;
+  background-color: #faeebc;
+}
+ /*메뉴-항목*/
+dd{margin:2px; }
+.sub-menu{text-indent:15px;}
+.nav-stacked > dd > a {
+  position: relative;
+  display: block;
+  padding: 8px 15px; color:#222;
+}
+
+.nav-stacked > dd > a:hover,
+.nav-stacked > dd > a:focus {
+  text-decoration: none;
+  background-color: #faeebc;
+}
+
+@media (min-width: 1200px) {
+    .container {
+
+        width: 940px;
+    }
+}

@@ -1,0 +1,85 @@
+<link href="styles/sub_04.css" rel="stylesheet">
+<script src="scripts/controllers/newProCtrl.js"></script>
+<div class="row clearfix">
+    <div class="col-sm-12 column">
+        <div class="row clearfix">
+            <div class="col-sm-3 column">
+                <!-- side menu -->
+                <div ng-if="true" ng-include="'/views/sidebar1.html'"></div>
+            </div>
+            <div class="col-sm-9 column">
+                <!-- contents -->
+                <div class="col-md-12 column">
+
+                    <!--신제품 리스트-->
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <h3>{{item.name}}</h3>
+                            <!--상세페이지-->
+                            <h4><img src="images/menu_icon_01.png"> 장비이미지 {{item.name}}</h4>
+                            <div class="slider">
+                                <a ng-repeat="slide in images"  href="../../images/newPro/{{slide}}" target="_black"><img class="mslide slide-animation" ng-swipe-right="nextSlide()" ng-swipe-left="prevSlide()"
+                                     ng-hide="!isCurrentSlideIndex($index)" ng-src="images/newPro/{{slide}}"></a>
+
+
+                                <a class="arrow prev" href="ym#/ym/product/new/{{item.id}}" ng-click="nextSlide()"></a>
+                                <a class="arrow next" href="ym#/ym/product/new/{{item.id}}" ng-click="prevSlide()"></a>
+                                <nav class="nnav">
+                                    <div class="wrapper">
+                                        <ul class="dots">
+                                            <li class="dot" ng-repeat="slide in images">
+                                                <a href="ym#/ym/product/new/{{item.id}}"
+                                                   ng-class="{'active':isCurrentSlideIndex($index)}"
+                                                   ng-click="setCurrentSlideIndex($index);">{{slide}}</a></li>
+                                        </ul>
+                                    </div>
+                                </nav>
+                            </div>
+
+                            <h4><img src="images/menu_icon_01.png"> 모델리스트 </h4>
+
+                            <div class="panel-group" id="panel-780726">
+                                <div class="panel panel-default" ng-repeat="model in model_item">
+                                    <div class="panel-heading">
+                                        <a class="panel-title collapsed" data-toggle="collapse"
+                                           data-parent="#panel-780726" href="ym/product/new/#{{model.id}}">{{model.name}}</a>
+                                    </div>
+                                    <div id="{{model.id}}" class="panel-collapse collapse">
+                                        <div class="panel-body">
+                                            <table class="table table-bordered">
+                                                <tbody>
+                                                <tr>
+                                                    <th> 모델명</th>
+                                                    <td colspan="3">
+                                                        <pre>{{model.name}}</pre>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <th> 옵션</th>
+                                                    <td colspan="3">
+                                                        <pre>{{model.option}}</pre>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div ng-if="role">
+                                <input type="button" class="btn btn-write pull-right"
+                                       ng-click="delete(item.id,item.images)" value="삭제"/>
+                            </div>
+                            <button type="button" class="btn btn-warning pull-right" onclick="history.back()">
+                                목록
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

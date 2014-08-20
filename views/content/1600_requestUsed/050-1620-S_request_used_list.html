@@ -1,0 +1,43 @@
+<link href="styles/sub_07.css" rel="stylesheet">
+<script src="scripts/controllers/mcQue.js"></script>
+
+<!--중고장비문의-->
+<div class="container cont01">
+    <div class="row clearfix">
+        <div class="col-md-offset-1 col-md-10 column col-md-offset-1">
+            <h3><img src="images/menu_icon_01.png"> 중고장비문의</h3>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                <tr>
+                    <th>제목</th>
+                    <th>업체명</th>
+                    <th>작성자</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat='items in pagedItems[currentPage]'>
+                    <th class="tstyle"><a href="ym#ym/request/used/{{items.id}}"> {{items.title}}</a></th>
+                    <td class="tstyle"> {{items.comp}} </td>
+                    <td class="tstyle">                            {{items.writer}}</td>
+                </tr>
+                </tbody>
+            </table>
+            <td colspan="2">
+                <div class="pagination pull-right">
+                    <li ng-class="{disabled: currentPage == 0}">
+                        <a href ng-click="prevPage()">« Prev</a>
+                    </li>
+                    <li ng-repeat="n in range(pagedItems.length)"
+                        ng-class="{active: n == currentPage}"
+                        ng-click="setPage()">
+                        <a href ng-bind="n + 1"></a>
+                    </li>
+                    <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                        <a href ng-click="nextPage()">Next »</a>
+                    </li>
+                </div>
+            </td>
+        </div>
+    </div>
+</div>
+

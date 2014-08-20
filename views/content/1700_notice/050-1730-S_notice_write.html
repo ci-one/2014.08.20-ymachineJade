@@ -1,0 +1,52 @@
+<link href="styles/notice_write.css" rel="stylesheet">
+<script type="text/javascript" src="scripts/controllers/notice_temp_items.js">
+</script>
+
+<div class="container cont01">
+    <div class="row clearfix tb01">
+        <div class="col-md-12 column">
+            <h3><img src="images/menu_icon_01.png"> 공지사항 작성</h3>
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <th> 제목</th>
+                    <td>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control input-sm"  ng-model="item.title"/>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th> 내용</th>
+                    <td>
+                        <div class="col-sm-12">
+                            <textarea class="form-control" rows="10" ng-model="item.content"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th> 첨부파일</th>
+                    <td>
+                        <div class="form-group">
+                            <label for="usedInputFilelist" class="sr-only">파일리스트</label>
+                            <span ng-if="item.images==null"><input type="file" multiple
+                                                                 ng-file-select="onFileSelect($files)"></span>
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <!--카테고리 편집 버튼-->
+    <div class="row clearfix tb01">
+        <div class="col-md-12 column">
+            <div class="btn-group pull-right">
+
+                <a href="ym#ym/notice" class="btn btn-write"> 목록 </a>
+                <a href="" class="btn btn-write" ng-click="insert()"> 입력 </a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,66 @@
+
+<link href="styles/sub_07.css" rel="stylesheet">
+<link href="styles/notice_write.css" rel="stylesheet">
+<script type="text/javascript" src="scripts/controllers/notice_temp_items.js">
+</script>
+<div class="container cont01" ng-controller="Notice_Detail">
+    <div class="row clearfix tb01">
+        <div class="col-md-offset-1 col-md-10 column col-md-offset-1">
+            <h3><img src="images/menu_icon_01.png">공지사항</h3>
+            <table class="table table-bordered">
+                <tbody>
+                <tr>
+                    <th> 제목</th>
+                    <td>
+                        <div class="col-sm-12">
+                            <input type="text" class="form-control input-sm" id="#" readonly="readonly"
+                                   value="{{notice_items.title}}">
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th> 내용</th>
+                    <td>
+                        <div class="col-sm-12">
+                            <textarea class="form-control" rows="10"
+                                      readonly="readonly">{{notice_items.content}}</textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <th> 첨부파일</th>
+                    <td>
+                        <div class="form-group">
+                            <label for="usedInputFilelist" class="sr-only">파일리스트</label>
+
+                            <div class="row clearfix">
+                            </div>
+                            <div class="myfilelist" ng-repeat="images in notice_items_sorting">
+                                <ul class="list-unstyled pull-left">
+                                    <img ng-src="/images/notice/{{images}}" style="width: 50px">{{images}}
+                                </ul>
+
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+            <br>
+            <div class="row clearfix tb01">
+                <div class="col-md-12 column">
+                    <div class="btn-group pull-right">
+
+                        <a href="#ym/notice" class="btn btn-write"> 목록 </a>
+                        <a href="#ym/notice/write/{{notice_items.id}}" class="btn btn-write"> 수정 </a>
+                        <a href="" class="btn btn-write" ng-click="delete()"> 삭제 </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!--카테고리 편집 버튼-->
+
+</div>

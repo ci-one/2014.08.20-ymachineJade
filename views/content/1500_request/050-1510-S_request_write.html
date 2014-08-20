@@ -1,0 +1,140 @@
+<script src="scripts/controllers/costomerQ.js"></script>
+
+<div class="container cont01">
+    <div class="row clearfix">
+
+        <div class="col-md-offset-1 col-md-10 column col-md-offset-1">
+            <h3>
+                <a href=""><img src="images/menu_icon_01.png">고객문의</a>
+            </h3>
+            <div class="row clearfix">
+                <div class="container">
+                    <div class="col-md-12 column">
+                        <form role="form" name="reqForm">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <div class="form-group">
+                                        <label for="usedInputTitle">제목</label>
+
+                                        <p class="help-block">*필수 항목입니다</p>
+
+                                        <div class="row clearfix"></div>
+                                        <input type="text" placeholder="문의사항 제목을 적어주세요"
+                                               class="form-control" ng-model="item.title" required
+                                               autofocus="autofocus"/>
+                                    </div><div>{{title}}</div>
+                                </div>
+                            </div>
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <div class="col-md-6 column visible-md visible-lg myhalf">
+                                        <div class="form-group form-inline">
+                                            <label for="usedInputname">작성자</label>
+
+                                            <p class="help-block">*필수 항목입니다</p>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="text" placeholder="작성자 성함을 적어주세요" required
+                                                   class="form-control myhalfinput"  ng-model="item.writer"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="usedInputCompany">업체명</label>
+
+                                            <p class="help-block">*필수 항목입니다</p>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="text" placeholder="업체명을 적어주세요" required
+                                                   class="form-control myhalfinput"  ng-model="item.comp"/>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 column visible-md visible-lg myhalf" style="right:-10px;">
+                                        <div class="form-group">
+                                            <label for="usedInputCall">연락처</label>
+
+                                            <p class="help-block">*필수 항목입니다</p>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="tel" min="0" max="9" required
+                                                   placeholder="연락처를 적어주세요. 적어주신 연락처로 연락드리겠습니다"
+                                                   class="form-control myhalfinput"  ng-model="item.contact"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="usedInputEmail">이메일</label>
+
+
+                                            <div class="row clearfix"></div>
+                                            <input type="email" required
+                                                   placeholder="등록하시면 와이머신의 최신 홍보자료를 받으실 수 있습니다"
+                                                   class="form-control myhalfinput"  ng-model="item.email"/>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12 column visible-sm visible-xs">
+                                        <div class="form-group form-inline">
+                                            <label for="usedInputname">작성자</label>
+
+                                            <p class="help-block">*필수 항목입니다</p>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="text" placeholder="작성자 성함을 적어주세요" required
+                                                   class="form-control"  ng-model="item.writer"/>
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="usedInputCompany">업체명</label>
+
+                                            <p class="help-block">*필수 항목입니다</p>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="text" placeholder="업체명을 적어주세요" required
+                                                   class="form-control"  ng-model="item.comp"/>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="usedInputCall">연락처</label>
+
+                                            <p class="help-block">*필수 항목입니다</p>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="tel" min="0" max="9" required
+                                                   placeholder="연락처를 적어주세요. 적어주신 연락처로 연락드리겠습니다"
+                                                   class="form-control"  ng-model="item.contact"/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="usedInputEmail">이메일</label>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="email" required
+                                                   placeholder="이메일을 등록하시면 와이머신의 최신 홍보자료를 받으실 수 있습니다"
+                                                   class="form-control"  ng-model="item.email"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <div class="form-group">
+                                        <label for="usedInputContent">내용</label>
+
+                                        <p class="help-block">*필수 항목입니다</p>
+
+                                        <div class="row clearfix"></div>
+                                        <textarea rows="10" cols="" class="form-control"  ng-model="item.content" required
+                                                  placeholder="문의사항을 적어주세요"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mywidth">
+                                    <button type="button" ng-disabled="!reqForm.$valid" class="btn btn-primary pull-right" ng-click="insertProcess(item)">등 록</button>
+                            </div>
+                        </form>
+                        <div ng-if="role">
+                        <a href="ym#ym/request/new/list" class="btn btn-primary pull-right">목록보기</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

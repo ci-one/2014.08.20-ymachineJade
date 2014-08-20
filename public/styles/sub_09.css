@@ -1,0 +1,119 @@
+@CHARSET "utf-8";
+
+@
+-webkit-viewport {
+	width: device-width;
+}
+
+@
+-moz-viewport {
+	width: device-width;
+}
+
+@
+-ms-viewport {
+	width: device-width;
+}
+
+@
+-o-viewport {
+	width: device-width;
+}
+
+@
+viewport {
+	width: device-width;
+}
+
+body {
+	font-family: nanumgothic;
+	font-size: 14px;
+}
+
+/*미디어 쿼리  */
+@media all and (max-width:1024px) {
+	.nav.navbar-nav li {
+		font-size: 10px;
+	}
+}
+
+.nav.navbar-nav li {
+	font-size: 13px;
+}
+
+.col-md-4 {
+	padding: 0px 0px 0px 0px;
+}
+
+.col-md-6 {
+	padding: 0px 0px 0px 0px;
+}
+
+.myhalf {
+	width: 44%;
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: bold;
+}
+
+h3 a {
+	color: #222222;
+}
+
+h3 a:hover {
+	text-decoration: none;
+}
+
+label {
+	float: left;
+}
+
+.cont01 {
+	margin-top: 0;
+}
+
+.form-control {
+	width: 88%;
+}
+
+.myhalfinput {
+	width: 100%;
+}
+
+.help-block {
+	padding-left: 50px;
+	padding-top: 5px;
+	font-size: 60%;
+	color: red;
+}
+
+.myfilelist {
+	width: 88%;
+	padding: 1% 1% 1% 1%;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+	-webkit-transition: border-color ease-in-out .15s, box-shadow
+		ease-in-out .15s;
+	transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+}
+
+.myfilelist ul {
+	border-top: 1px solid #ccc;
+	margin-top: 1%;
+	border-bottom: 2px solid #ccc;
+}
+
+.myfilelist ul>li {
+	padding-left: 1%;
+	border-top: 1px solid #ccc;
+}
+
+.mywidth{
+	width: 88%; 
+}
+
+.mywidth .btn{margin:0 5px;}

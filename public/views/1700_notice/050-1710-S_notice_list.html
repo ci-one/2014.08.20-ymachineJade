@@ -1,0 +1,51 @@
+<link href="styles/sub_07.css" rel="stylesheet">
+
+<script type="text/javascript" src="scripts/controllers/notice_temp_items.js">
+</script>
+
+
+<div class="container cont01"><!-- ng-app="listapp"-->
+    <div class="row clearfix" ng-controller="Notice_Controller"><!-- ng-controller="listview" -->
+        <div class="col-md-offset-1 col-md-10 column col-md-offset-1">
+            <div class=paginationcenter></div>
+            <h3><img src="images/menu_icon_01.png"> 공지사항</h3>
+            <table class="table table-bordered table-condensed">
+                <thead>
+                <tr>
+                    <th>글번호</th>
+                    <th>제목</th>
+                    <th>작성일</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr ng-repeat='item in pagedItems[currentPage]'>
+
+                    <td class="tstyle"><a href="ym#"> {{item.id}} </a></td>
+                    <td><a href="ym#ym/notice/{{item.id}}"> {{item.title}} </a></td>
+                    <td class="tstyle"><a href="ym#"> {{item.date}} </a></td>
+                </tr>
+                </tbody>
+            </table>
+
+            <td colspan="2">
+
+                <div class="pagination pull-right">
+                    <li ng-class="{disabled: currentPage == 0}">
+                        <a href ng-click="prevPage()">« Prev</a>
+                    </li>
+                    <li ng-repeat="n in range(pagedItems.length)"
+                        ng-class="{active: n == currentPage}"
+                        ng-click="setPage()">
+                        <a href ng-bind="n + 1"></a>
+                    </li>
+                    <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                        <a href ng-click="nextPage()">Next »</a>
+                    </li>
+                </div>
+            </td>
+            <div ng-if="role">
+                <a href="ym#ym/notice/write" class="btn-primary btn button pull-center">작성</a>
+            </div>
+        </div>
+    </div>
+</div>

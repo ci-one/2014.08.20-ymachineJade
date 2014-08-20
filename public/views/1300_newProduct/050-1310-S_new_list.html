@@ -1,0 +1,64 @@
+<link href="styles/sub_04.css" rel="stylesheet">
+<script src="scripts/controllers/newProCtrl.js"></script>
+
+<div class="row clearfix">
+    <div class="col-sm-12 column">
+        <div class="row clearfix">
+            <div class="col-sm-3 column">
+                <!-- side menu -->
+                <div ng-if="true" ng-include="'/views/sidebar1.html'"></div>
+            </div>
+            <div class="col-sm-9 column">
+                <!-- contents -->
+                <div class="col-md-12 column">
+                    <h3><a href="ym#/ym/product/new/list"><img src="images/menu_icon_01.png"> 신제품소개</a></h3>
+                    <!--신제품 리스트-->
+                    <div class="row clearfix">
+                        <div class="col-md-12 column">
+                            <div class="media"  ng-repeat='item in pagedItems[currentPage]'>
+                                <a href="ym#ym/product/new/{{item.id}}" class="pull-left"><img ng-src="images/newPro/{{item.images}}" class="img-thumbnail" alt=''
+                                                                   style="width:128px; height:100px;"/></a>
+
+                                <div class="media-body">
+                                    <h4 class="media-heading"> {{item.name}} </h4> {{item.content}}
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="row clearfix">
+                        <div class="col-md-10 column">
+                            <div class= "paginationcenter">
+                                <ul class="pagination" STYLE="WIDTH:3000PX;">
+                                        <li ng-class="{disabled: currentPage == 0}">
+                                            <a href ng-click="prevPage()">« Prev</a>
+                                        </li>
+                                        <li ng-repeat="n in range(pagedItems.length)"
+                                            ng-class="{active: n == currentPage}"
+                                            ng-click="setPage()">
+                                            <a href ng-bind="n + 1"></a>
+                                        </li>
+                                        <li ng-class="{disabled: currentPage == pagedItems.length - 1}">
+                                            <a href ng-click="nextPage()">Next »</a>
+                                        </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div ng-if="role">
+                            <div class="col-md-2 column">
+                                <a href="ym#ym/product/new/write/{{select}}">
+                                    <button type="button" class="btn btn-write pull-right">
+                                        장비등록
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

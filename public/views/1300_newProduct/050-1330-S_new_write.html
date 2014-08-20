@@ -1,0 +1,89 @@
+<link href="styles/sub_06.css" rel="stylesheet">
+
+<div class="container cont01">
+    <div class="row clearfix">
+        <div class="col-md-3 column">
+            <div ng-if="true" ng-include="'/views/sidebar1.html'"></div>
+        </div>
+
+        <!--본문내용-->
+        <div class="col-md-9 column">
+            <!--장비등록 -->
+            <div class="row clearfix tb01">
+                <div class="col-md-12 column">
+                    <h3><img src="images/icon_02.png"> 신장비등록</h3>
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <th> 장비명 </th>
+                            <td>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control input-sm"  ng-model="item.name" />
+                                </div></td>
+                            <th> 제조사 </th>
+                            <td>
+                                <div class="col-sm-12">
+                                    <input type="text" class="form-control input-sm" ng-model="item.company" />
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <th> 장비설명 </th>
+                            <td colspan="3">
+                                <div class="col-sm-12">
+                                    <textarea class="form-control" rows="3" ng-model="item.content"></textarea>
+                                </div></td>
+                        </tr>
+                        <tr>
+                            <th> 첨부파일 </th>
+                            <td colspan="3">
+                                 <span ng-if="item.file==null"><input type="file" multiple
+                                                                      ng-file-select="onFileSelect($files)"></span>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <!--모델 등록-->
+            <div class="row clearfix">
+                <div class="col-md-12 column">
+                    <h3><img src="images/icon_02.png"> 모델등록</h3>
+                    <table class="table table-bordered">
+                        <tbody>
+                        <tr>
+                            <th> 모델명 </th>
+                            <td colspan="3">
+                                <input type="text" class="form-control input-sm" ng-model="modeint.name" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <th> 옵션 </th>
+                            <td colspan="3">
+                                <textarea class="form-control input-sm" rows="3" ng-model="modeint.option" />
+                            </td>
+                        </tr>
+                        </tbody>
+                        <tbody ng-repeat="mode in model">
+                        <tr>
+                            <th> 모델명 </th>
+                            <td colspan="3">
+                                <pre>{{mode.name}}</pre>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th> 옵션 </th>
+                            <td colspan="3">
+                                <pre>{{mode.option}}</pre>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <input type="button" class="btn btn-write" ng-click="modeladd()" value="모델추가" />
+                    <input type="button" class="btn btn-write" ng-click="insert()" value="등록" />
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

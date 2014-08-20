@@ -1,0 +1,90 @@
+<link href="styles/customerqna_view.css" rel="stylesheet">
+<script src="scripts/controllers/costomerQ.js"></script>
+
+<div class="container cont01">
+    <div class="row clearfix">
+
+        <div class="col-md-offset-1 col-md-10 column col-md-offset-1">
+            <h3>
+                <a href="ym#"><img src="images/menu_icon_01.png">고객문의</a>
+            </h3>
+
+            <div class="row clearfix">
+                <div class="container">
+                    <div class="col-md-12 column">
+                        <form role="form">
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <div class="form-group">
+                                        <label for="usedInputTitle">제목</label>
+                                        <div class="row clearfix"></div>
+                                        <input type="text" class="form-control" id="usedInputTitle"
+                                               autofocus="autofocus" readonly="readonly" value="{{Costomer_File.title}}">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <div class="col-md-6 column visible-md visible-lg myhalf">
+                                        <div class="form-group form-inline">
+                                            <label for="usedInputname">작성자</label>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="text" class="form-control myhalfinput" id=""
+                                                   readonly="readonly" value="{{Costomer_File.writer}}">
+                                        </div>
+                                        <div class="form-group ">
+                                            <label for="usedInputCompany">업체명</label>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="text" class="form-control myhalfinput" id=""
+                                                   readonly="readonly" value="{{Costomer_File.comp}}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 column visible-md visible-lg myhalf">
+                                        <div class="form-group">
+                                            <label for="usedInputCall">연락처</label>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="tel" class="form-control myhalfinput" id=""
+                                                   readonly="readonly" value="{{Costomer_File.contact}}">
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="usedInputEmail">이메일</label>
+
+                                            <div class="row clearfix"></div>
+                                            <input type="email" class="form-control myhalfinput"
+                                                   id="usedInputEmail" readonly="readonly" value="{{Costomer_File.email}}">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12 column visible-sm visible-xs"></div>
+                            </div>
+
+                            <div class="row clearfix">
+                                <div class="col-md-12 column">
+                                    <div class="form-group">
+                                        <label for="usedInputContent">내용</label>
+
+                                        <div class="row clearfix"></div>
+                                        <textarea rows="10" cols="" class="form-control"
+                                                  id="usedInputContent" readonly="readonly">{{Costomer_File.content}}</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mywidth">
+                                <div class="pull-right">
+                                    <!--<a class="btn btn-danger pull-right" ng-click='remove(Costomer_File.id)'>삭제</a>-->
+                                    <a href="ym#ym/request/new/list" class="btn btn-primary pull-right">목록보기</a>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
